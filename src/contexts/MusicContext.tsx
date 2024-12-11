@@ -12,20 +12,23 @@ export const MusicContext = createContext<MusicContextType>({
 });
 
 export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isPlaying, setIsPlaying] = useState(false); // Set default to false to ensure music doesn't start on reload
+  const [isPlaying, setIsPlaying] = useState(false); // Start with music paused
   const { play, stop } = useAutoPlayMusic();
 
   useEffect(() => {
-    if (isPlaying) {
-      play(); // Automatically play when isPlaying is true
-    } else {
-      stop(); // Stop music when isPlaying is false
-    }
-  }, [isPlaying, play, stop]); // Add play/stop in the dependency array
+    // Automatically play music when the site loads
+    play();
+    setIsPlaying(true); // Update state to reflect the music is playing
+  }, [play]);
 
   const toggleMusic = useCallback(() => {
+    if (isPlaying) {
+      stop(); // Stop music
+    } else {
+      play(); // Start music
+    }
     setIsPlaying((prev) => !prev); // Toggle the state
-  }, []);
+  }, [isPlaying, play, stop]);
 
   return (
     <MusicContext.Provider value={{ isPlaying, toggleMusic }}>
