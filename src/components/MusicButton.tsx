@@ -10,8 +10,8 @@ export const MusicButton: React.FC = () => {
       onClick={toggleMusic}
       className="fixed bottom-8 right-8 p-4 rounded-full bg-pink-500 text-white shadow-lg hover:bg-pink-600 transition-colors"
     >
-      <Music 
-        className={`w-6 h-6 transition-transform ${isPlaying ? 'scale-x-[-1]' : ''}`} 
+      <Music
+        className={`w-6 h-6 transition-transform ${isPlaying ? 'scale-x-[-1]' : ''}`}
       />
     </button>
   );
