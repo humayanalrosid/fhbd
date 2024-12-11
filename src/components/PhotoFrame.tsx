@@ -20,7 +20,7 @@ export const PhotoFrame: React.FC<PhotoFrameProps> = ({ visible }) => {
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 p-1 animate-spin-slow">
         <div className="rounded-full overflow-hidden h-full w-full">
           <img
-            src="https://drive.google.com/uc?export=view&id=1Fe1JuHlGLFRcd1G52BRt2ZIVwyGUc2gY"
+            src="https://raw.githubusercontent.com/humayanalrosid/fhbd/175b4276f01331ac77697616d89937dc1563a215/public/farhana.jpg"
             alt="Birthday Girl"
             className="w-full h-full object-cover"
           />
